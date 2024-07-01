@@ -12,7 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-  
+
     protected $fillable = [
         'fullname',
         'email',
@@ -34,5 +34,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'credit' => 'decimal:3',
     ];
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function shop()
+    {
+        return $this->hasOne(Shop::class);
+    }
+
+    public function followings()
+    {
+        return $this->hasMany(Following::class, 'follower_id');
+    }
+
 
 }
