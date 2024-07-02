@@ -1,10 +1,13 @@
+import {BrowserRouter} from 'react-router-dom'
+import ShopRoutes from './route/routes'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
   return (
-    <>
-        <h1>mmk</h1>
-    </>
+    <BrowserRouter>
+        <ShopRoutes />
+    </BrowserRouter>
   )
 }
 
