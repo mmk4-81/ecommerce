@@ -1,11 +1,20 @@
 import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-    plugins: [
-        laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
-            refresh: true,
-        }),
-    ],
+  plugins: [react()],
+  build: {
+    outDir: '../../../public/frontend',
+  },
+  server: {
+    port: 3000,
+    proxy: {
+      '/api': 'http://localhost:8000',
+    },
+  },
+  resolve: {
+    alias: {
+      '@': '/resources/frontend/src',
+    },
+  },
 });
