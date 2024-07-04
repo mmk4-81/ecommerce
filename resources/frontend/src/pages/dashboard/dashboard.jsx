@@ -1,7 +1,7 @@
-const DashboardIndex = ()=>{
+const Dashboard = ()=>{
  return (
-    <h1>DashboardIndex</h1>
+    <h1>Dashboard</h1>
  );
 }
 
-export default DashboardIndex;
+export default Dashboard;
